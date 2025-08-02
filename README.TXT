@@ -1,3 +1,20 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a0f9e97f7c7c67fb6d3fb51230e32eca796194b8975bdedcd7f775700fab214a
-size 671
+#### Description ####
+
+Run clamav virus checker using malware signatures processed via hypatia.
+
+#### Get dependencies; for running and/or rebuilding ####
+
+sudo apt-get install -y rsync dos2unix clamav sudo git unzip wget bash
+sudo -i freshclam
+
+#### To run ####
+
+./run-clamav-hypatia-withOUT-malshare.sh "clamavout.txt" "/"
+
+#you can also run with malsharebulk defintions, but I got quite a few false positives this way ...
+
+./run-clamav-hypatia-with-malshare.sh "clamavout.txt" "/"
+
+#### Rebuilding ####
+
+To rebuild, run get.sh . Note: Normally you don't actually have to do this, because the output has been included within this repo! It will [also] take a long time.
