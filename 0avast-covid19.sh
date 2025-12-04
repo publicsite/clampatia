@@ -1,3 +1,6 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7df41b652d9dc6b64d02fcceaebc77440723c0a0aea04c40223e72142fce4b75
-size 337
+#!/bin/sh
+#License: CC0
+#Description: Hypatia conversion script for https://github.com/avast/covid-19-ioc
+
+tail -n +2 datasets/android/*.csv | sed 's/,/ , /' | awk '{ print $1 }' | sort -u  >> avast-covid19-android.sha256
+tail -n +2 datasets/windows/*.csv | sed 's/,/ , /' | awk '{ print $1 }' | sort -u  >> avast-covid19-windows.sha256
